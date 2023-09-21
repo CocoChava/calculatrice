@@ -23,4 +23,4 @@ match operation:
   case _:
     print("Erreur: le symbole d'opération doit être '+', '-', '*' ou '/'.")
     
-print(resultat)
+print(f"D'après mes calculs, le résultat est {resultat} !")
