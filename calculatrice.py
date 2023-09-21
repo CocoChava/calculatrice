@@ -1,11 +1,14 @@
 nombre_a_gauche = input("Saisisez un nombre sans virgule :")
-nombre_a_droite = input("Saisisez un nombre sans virgule :")
-operation = input("Saisisez un opérateur au choix entre +, -, *, / :")
-resultat=0
-
-if not nombre_a_gauche.isnumeric() or not nombre_a_droite.isnumeric():
-  print("Erreur: les deux nombres doivent être des nombres entiers.")
+if not nombre_a_gauche.isnumeric() :
+  print("Erreur: il faut que ce soit un nombre entier.")
   quit()
+nombre_a_droite = input("Saisisez un nombre sans virgule :")
+if not nombre_a_droite.isnumeric() :
+  print("Erreur: il faut que ce soit un nombre entier.")
+  quit()
+operation = input("Saisisez un opérateur au choix entre +, -, *, / :")
+
+resultat=0
 
 match operation:
   case "+":
@@ -22,5 +25,6 @@ match operation:
       resultat=int(nombre_a_gauche) / int(nombre_a_droite)
   case _:
     print("Erreur: le symbole d'opération doit être '+', '-', '*' ou '/'.")
+    quit()
     
-print(f"D'après mes calculs, le résultat est {resultat} !")
+print(f"D'après mes calculs {nombre_a_gauche} {operation} {nombre_a_droite} donne le résultat suivant : {resultat} !")
